@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Knjižara Akademija</title>
+  <link rel='icon' type="image.jpg" href="image/title1.jpg" />
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="js/fancybox-master/dist/jquery.fancybox.min.css" />
+</head>
+
+<body>
+  <header id="zaglavlje">
+    <div class="linija-meni">
+
+      <div id="logo">
+        <h1><a href="index.html">Knjižara Akademija</a></h1>
+      </div>
+
+      <nav id="meni-gornji-container">
+        <ul class="meni-gornji">
+          <li class="meni-active"><a href="index.html">Početna</a></li>
+          <li><a href="">Knjige</a>
+            <ul>
+              <li><a href="triler.html">Triler</a></li>
+              <li><a href="ljubavni.html">Ljubavni</a></li>
+              <li><a href="fantastika.html">Fantastika</a></li>
+              <li><a href="klasici.html">Klasici</a></li>
+            </ul>
+          </li>
+          <li><a href="ponuda.html">Ponuda</a></li>
+          <li><a href="audioknjige.html">Audio Knjige</a></li>
+          <li><a href="onama.html">O nama</a></li>
+          <li><a class="current" href="galerija.html">Galerija</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="glavni">
+    <div class="container">
+      <header class="dobrodoslica">
+        <h3>Galerija</h3>
+        <p>Ovde možete pogledati neke slike knjiga koje se nalaze u našoj ponudi!</p>
+      </header>
+
+      <!-- ******************************************************************************************************************************* -->
+
+
+      <div class="galerija-div">
+        <a data-fancybox="gallery" href="image/ledenizmaj.jpg"><img src="image/ledenizmaj.jpg" alt="Slika"></a>
+        <a data-fancybox="gallery" href="image/vuk.jpg"><img class="galerija" src="image/vuk.jpg" alt="Slika"></a>
+        <a data-fancybox="gallery" href="image/trileri.jfif"><img class="galerija" src="image/trileri.jfif"
+            alt="Slika"></a>
+        <a data-fancybox="gallery" href="image/triler.jfif"><img class="galerija" src="image/triler.jfif"
+            alt="Slika"></a>
+        <a data-fancybox="gallery" href="image/pstanica.jpg"><img class="galerija" src="image/pstanica.jpg"
+            alt="Slika"></a>
+        <a data-fancybox="gallery" href="image/vernik.jpg"><img class="galerija" src="image/vernik.jpg" alt="Slika"></a>
+        <a data-fancybox="gallery" href="image/tabu.jpg"><img class="galerija" src="image/tabu.jpg" alt="Slika"></a>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+      <script src="js/fancybox-master/dist/jquery.fancybox.min.js"></script>
+      <script>
+        $('[data-fancybox]').fancybox({
+          loop: true,
+        });
+      </script>
+
+
+      <!-- ******************************************************************************************************************************* -->
+      <footer id="footer">
+        <div class="footer-gore">
+          <div class="knjizaraakademija-info">
+            <h3>Knjižara Akademija</h3>
+            <p>Knjižara Akademija svojim klijentima pruža pouzdanu kupovinu i propratne usluge koje obezbeđuju dostavu
+              knjiga.
+              Naš tim će se potruditi da maksimalno izađe u susret potrošačima i odgovori na sve njihove zahteve. </p>
+          </div>
+          <div class="knjizaraakademija-primedbe">
+            <h4>Sugestije</h4>
+            <p>Ukoliko imate neke sugestije ili pitanja, slobodno nas kontaktirajte. Hvala!</p>
+            <a href="kontakt.html">Kontaktirajte nas</a>
+          </div>
+        </div>
+    </div>
+    </footer>
+
+    <a href="#" class="vrati-na-pocetak"><i class="fa fa-chevron-up"></i></a>
+</body>
+
+</html>

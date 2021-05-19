@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Knjižara Akademija</title>
+    <link rel='icon' type="image/jpg" href="image/title1.jpg" />
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header id="zaglavlje">
+        <div class="linija-meni">
+            <div id="logo">
+                <h1><a href="index.html">Knjižara Akademija</a></h1>
+            </div>
+            <nav id="meni-gornji-container">
+                <ul class="meni-gornji">
+                    <li class="meni-active"><a href="index.html">Početna</a></li>
+                    <li><a href="">Knjige</a>
+                        <ul>
+                            <li><a href="triler.html">Triler</a></li>
+                            <li><a href="ljubavni.html">Ljubavni</a></li>
+                            <li><a href="fantastika.html">Fantastika</a></li>
+                            <li><a href="klasici.html">Klasici</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="current" href="ponuda.html">Ponuda</a></li>
+                    <li><a href="audioknjige.html">Audio Knjige</a></li>
+                    <li><a href="onama.html">O nama</a></li>
+                    <li><a href="galerija.html">Galerija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="glavni">
+        <div class="container">
+            <header class="dobrodoslica">
+                <h3>Ponuda</h3>
+                <p>Ovde mozete da pogledate ostale knjige koje imamo u ponudi.</p>
+        </div>
+    </section>
+    </header>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin-bottom: 3%;
+        }
+        
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+    </section>
+
+    <button type="button" onclick="loadDoc()">Kliknite ovde za ponudu</button>
+    <br><br>
+    <table id="demo"></table>
+    <script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            xhttp.open("GET", "ponuda.xml", true);
+            xhttp.send();
+        }
+
+        function myFunction(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table = "<tr><th>PISAC</th><th>NAZIV ROMANA</th></tr>";
+            var x = xmlDoc.getElementsByTagName("CD");
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("PISAC")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("ROMAN")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+    </script>
+
+    <footer id="footer">
+        <div class="footer-gore">
+
+
+            <div class="knjizaraakademija-info">
+                <h3>Knjižara Akademija</h3>
+                <p>Knjižara Akademija svojim klijentima pruža pouzdanu kupovinu i propratne usluge koje obezbeđuju dostavu knjiga. Naš tim će se potruditi da maksimalno izađe u susret potrošačima i odgovori na sve njihove zahteve.
+                </p>
+            </div>
+
+            <div class="knjizaraakademija-primedbe">
+                <h4>Sugestije</h4>
+                <p>Ukoliko imate neke sugestije ili pitanja, slobodno nas kontaktirajte. Hvala!</p>
+                <a href="kontakt.html">Kontaktirajte nas</a>
+            </div>
+        </div>
+
+
+    </footer>
+    <a href="#" class="vrati-na-pocetak"><i class="fa fa-chevron-up"></i></a>
+
+
+
+</body>
+
+
+
+</html>

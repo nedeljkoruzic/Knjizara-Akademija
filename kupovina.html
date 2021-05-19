@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Knjižara Akademija</title>
+  <link rel='icon' type="image/jpg" href="image/title1.jpg" />
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/kupovina.js"></script>
+</head>
+
+<body>
+  <header id="zaglavlje">
+    <div class="linija-meni">
+
+      <div id="logo">
+        <h1><a href="index.html">Knjižara Akademija</a></h1>
+      </div>
+
+      <nav id="meni-gornji-container">
+        <ul class="meni-gornji">
+          <li class="meni-active"><a href="index.html">Početna</a></li>
+          <li><a href="">Knjge</a>
+            <ul>
+              <li><a href="triler.html">Trileri</a></li>
+              <li><a href="ljubavni.html">Ljubavni</a></li>
+              <li><a href="fantastika.html">Fantastika</a></li>
+              <li><a href="klasici.html">Klasici</a></li>
+            </ul>
+          </li>
+          <li><a href="ponuda.html">Ponuda</a></li>
+          <li><a href="audioknjige.html">Audio Knjige</a></li>
+          <li><a href="onama.html">O nama</a></li>
+          <li><a href="galerija.html">Galerija</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="glavni">
+    <div class="container">
+      <header class="dobrodoslica">
+        <h3>Kupovina</h3>
+        <p>Za naručivanje knjige potrebno je popuniti sledeću formu. Rok isporuke je 1 od 2 radna
+          dana. Plaćanje kuriru pouzećem.
+        </p>
+      </header>
+
+      <!-- ******************************************************************************************************************************* -->
+
+      <div class="container">
+        <h2 class="text-center">Kupite knjigu</h2>
+
+        <div class="container">
+          <form action="action_page.php" id="form">
+            <div class="row">
+              <div class="col-25">
+                <label for="name">Ime i prezime</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="name" name="imeprezime" placeholder="Vaše ime i prezime...">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="email">Email</label>
+              </div>
+              <div class="col-75">
+                <input type="email" id="email" name="email" placeholder="Vaš email...">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="adresa">Adresa</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="adresa" name="adresa" placeholder="Vaša adresa...">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="postanskibroj">Poštanski broj</label>
+              </div>
+              <div class="col-75">
+                <input type="number" id="postanskibroj" name="postanskiBroj" placeholder="Vaš poštanski broj...">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="kontakttelefon">Kontakt telefon</label>
+              </div>
+              <div class="col-75">
+                <input type="number" id="kontakttelefon" name="kontaktTelefon" placeholder="Vaš kontakt telefon...">
+              </div>
+            </div>
+
+            <div class="row">
+              <input type="button" value="Kupi" id="dugme">
+            </div>
+            <div id="modal" class="modal-klasa">
+
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Narudžbina je uspešno zabeležena!</p>
+              </div>
+
+            </div>
+        </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ******************************************************************************************************************************* -->
+  <footer id="footer">
+    <div class="footer-gore">
+
+
+      <div class="knjizaraakademija-info">
+        <h3>Knjižara Akademija</h3>
+        <p>Knjižara Akademija svojim klijentima pruža pouzdanu kupovinu i propratne usluge koje obezbeđuju isporuku
+          istih.
+          Naš tim će se potruditi da maksimalno izađe u susret potrošačima i odgovori na sve njihove zahteve. </p>
+      </div>
+
+      <div>
+
+
+        <div class="knjizaraakademija-primedbe">
+          <h4>Sugestije</h4>
+          <p>Ukoliko imate neke sugestije ili pitanja, slobodno nas kontaktirajte. Hvala!</p>
+          <a href="kontakt.html">Kontaktirajte nas</a>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </footer>
+
+  <a href="#" class="vrati-na-pocetak"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- ******************************************************************************************************************************* -->
+
+  <script>document.getElementById("dugme").addEventListener('click', function validacija() {
+      var x = document.forms["form"]["name"].value;
+      if (x == "") {
+        alert("Niste uneli ime i prezime!");
+        return;
+      }
+      input = document.forms["form"]["email"].value;
+      atpos = input.indexOf("@");
+      dotpos = input.lastIndexOf(".");
+      if (input == "" || atpos < 1 || dotpos - atpos < 2) {
+        alert("Niste uneli odgovarujuci email!");
+        return;
+      }
+      x = document.forms["form"]["adresa"].value;
+      if (x == "") {
+        alert("Niste uneli adresu!");
+        return;
+      }
+      x = document.forms["form"]["postanskibroj"].value;
+      if (x == "") {
+        alert("Niste uneli postanski broj!");
+        return;
+      }
+      x = document.forms["form"]["kontakttelefon"].value;
+      if (x == "") {
+        alert("Niste uneli kontakt telefon!");
+        return;
+      }
+
+      var modal = document.getElementById("modal");
+
+      var dugme = document.getElementById("dugme");
+
+      var span = document.getElementsByClassName("close")[0];
+
+      modal.style.display = "block";
+
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+    })</script>
+
+
+</body>
+
+</html>

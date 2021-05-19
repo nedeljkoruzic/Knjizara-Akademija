@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Knjižara Akademija</title>
+  <link rel='icon' type="image/jpg" href="image/title1.jpg" />
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/kontakt.js"></script>
+</head>
+
+<body>
+  <header id="zaglavlje">
+    <div class="linija-meni">
+
+      <div id="logo">
+        <h1><a href="index.html">Knjižara Akademija</a></h1>
+      </div>
+
+      <nav id="meni-gornji-container">
+        <ul class="meni-gornji">
+          <li class="meni-active"><a href="index.html">Početna</a></li>
+          <li><a href="">Knjige</a>
+            <ul>
+              <li><a href="triler.html">Trileri</a></li>
+              <li><a href="ljubavni.html">Ljubavni</a></li>
+              <li><a href="fantastika.html">Fantastika</a></li>
+              <li><a href="klasici.html">Klasici</a></li>
+            </ul>
+          </li>
+          <li><a href="ponuda.html">Ponuda</a></li>
+          <li><a href="audioknjige.html">Audio Knjige</a></li>
+          <li><a href="onama.html">O nama</a></li>
+          <li><a href="galerija.html">Galerija</a></li>
+          <li><a class="current" href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="glavni">
+    <div class="container">
+      <form action="action_page.php" id="form">
+        <header class="dobrodoslica">
+          <h3>Dobrodošli</h3>
+          <p>Ovde nas možete kontaktirati, a mi ćemo se potruditi da Vam odgovorimo u što kraćem vremenskom roku!</p>
+        </header>
+    </div>
+    <div class="container">
+      <h2 class="text-center">Kontaktirajte nas</h2>
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-25">
+            <label for="name">Ime i prezime</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="name" name="imeprezime" placeholder="Vaše ime i prezime...">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="email">Email</label>
+          </div>
+          <div class="col-75">
+            <input type="email" id="email" name="email" placeholder="Vaš email...">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="poruka">Poruka</label>
+          </div>
+          <div class="col-75">
+            <textarea id="poruka" name="poruka" placeholder="Napišite nesto..." style="height:200px"></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="dugme">
+            <input type="button" value="Pošalji" id="dugme">
+          </div>
+        </div>
+        <div id="modal" class="modal-klasa">
+
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Uspešno ste poslali poruku!</p>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+
+  </section>
+  <section>
+    <div class="mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.674771098659!2d20.402552015536934!3d44.84855627909841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6d6130bffc362462!2sITAcademy!5e0!3m2!1ssr!2srs!4v1610465801024!5m2!1ssr!2srs"
+        width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+        tabindex="0"></iframe>
+    </div>
+  </section>
+
+  <!-- ******************************************************************************************************************************* -->
+  <footer id="footer">
+    <div class="footer-gore">
+
+
+      <div class="knjizaraakademija-info">
+        <h3>Knjižara Akademija</h3>
+        <p>Knjižara Akademija svojim klijentima pruža pouzdanu kupovinu i propratne usluge koje obezbeđuju isporuku
+          istih.
+          Naš tim će se potruditi da maksimalno izađe u susret potrošačima i odgovori na sve njihove zahteve. </p>
+      </div>
+      <div class="knjizaraakademija-primedbe">
+        <h4>Sugestije</h4>
+        <p>Ukoliko imate neke sugestije ili pitanja, slobodno nas kontaktirajte. Hvala!</p>
+        <a href="kontakt.html">Kontaktirajte nas</a>
+      </div>
+
+    </div>
+    </div>
+  </footer>
+
+  <a href="#" class="vrati-na-pocetak"><i class="fa fa-chevron-up"></i></a>
+
+
+  <!-- ******************************************************************************************************************************* -->
+
+
+  <script>document.getElementById("dugme").addEventListener('click', function validacija() {
+      var x = document.forms["form"]["name"].value;
+      if (x == "") {
+        alert("Niste uneli ime i prezime!");
+        return;
+      }
+      input = document.forms["form"]["email"].value;
+      atpos = input.indexOf("@");
+      dotpos = input.lastIndexOf(".");
+      if (input == "" || atpos < 1 || dotpos - atpos < 2) {
+        alert("Niste uneli odgovarujuci email!");
+        return;
+      }
+      x = document.forms["form"]["poruka"].value;
+      if (x == "") {
+        alert("Niste uneli poruku!");
+        return;
+      }
+
+
+      var modal = document.getElementById("modal");
+
+      var dugme = document.getElementById("dugme");
+
+      var span = document.getElementsByClassName("close")[0];
+
+      modal.style.display = "block";
+
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+    })</script>
+
+
+</body>
+
+</html>
